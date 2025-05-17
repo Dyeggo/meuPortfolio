@@ -65,9 +65,10 @@ main {
 
 main p {
     display: none;
-    text-align: left;
     border-bottom: solid 1px black;
     margin-bottom: 5px;
+    max-width: 1024px;
+    line-height: 20px;
 }
 
 span {
@@ -94,10 +95,23 @@ main img {
     }
     100% {
         transform: translateX(0);
-        opacity: 2;
+        opacity: 1;
     }
 }
 
 .animacao-entrada {
     animation: entrarDaEsquerda 0.8s ease-in;
+}
+
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animacao-logo-principal {
+    animation: aparecer 1s;
 }

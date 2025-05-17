@@ -1,6 +1,4 @@
 const sobre = document.getElementById("butSobre");
-const skills = document.getElementById("butSkills");
-const projetos = document.getElementById("butProjetos");
 
 const titulo = document.querySelector("h1");
 const texto = document.querySelectorAll("p");
