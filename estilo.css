@@ -22,13 +22,14 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .logo img {
     width: 120px; /* ajuste conforme necessário */
     height: auto;
     display: block;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto;
 }
 
 nav {
@@ -36,6 +37,7 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin: auto;
 }
 
 nav a {
@@ -53,8 +55,32 @@ nav a:hover {
     background-color: #3e3e5e;
     color: #fff;
 }
-/* Apresentação */
 
+.redeSocial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.redeSocial a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.redeSocial a:hover {
+    box-shadow: 0 0 5px 1px #ffffff79;
+}
+
+/* Apresentação */
 main {
     flex: 1;
     padding: 60px;
@@ -113,5 +139,5 @@ main img {
 }
 
 .animacao-logo-principal {
-    animation: aparecer 1s;
+    animation: aparecer 3s;
 }
