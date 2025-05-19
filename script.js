@@ -11,6 +11,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const texto = document.querySelectorAll("p");
     const telaPrincipal = document.querySelector("main");
     const minhaImagem = document.getElementById("minhaImagem");
+    const minhaSkills = document.querySelectorAll(".minhaSkills");
+    const subTitulo = document.querySelector("h2");
+    const listaSkills = document.querySelector("ul");
 
     let secaoAtual = "";
 
@@ -26,9 +29,19 @@ window.addEventListener("DOMContentLoaded", () => {
         minhaImagem.style.display = "flex";
         titulo.textContent = "Prazer, me sou Dyeggo Rodigues";
 
+        // esconder skills
+        minhaSkills.forEach(img => {
+            img.style.display = "none";
+            img.classList.remove("animacao-entrada");
+        });
+
+        subTitulo.style.display = "none";
+        listaSkills.style.display = "none";
+
         telaPrincipal.classList.add("animacao-entrada");
         titulo.classList.add("animacao-entrada");
         minhaImagem.classList.add("animacao-entrada");
+
         texto.forEach(p => {
             p.style.display = "block";
         });
@@ -57,8 +70,8 @@ window.addEventListener("DOMContentLoaded", () => {
         titulo.textContent = "Minhas Skills";
         sobre.style.background = "none";
         skills.style.background = "#3e3e5e";
-
         minhaImagem.style.display = "none";
+        telaPrincipal.style.flexDirection = "column";
         
         texto.forEach(p => {
             p.style.display = "none";
@@ -67,7 +80,33 @@ window.addEventListener("DOMContentLoaded", () => {
         titulo.classList.remove("animacao-logo-principal");
         titulo.classList.remove("animacao-entrada");
         void titulo.offsetWidth;
+
         titulo.classList.add("animacao-entrada");
+        minhaSkills.forEach( img => {
+            img.style.display = "flex";
+            img.classList.add("animacao-entrada");
+        });
+
+        subTitulo.classList.add("animacao-entrada");
+        listaSkills.classList.add("animacao-entrada");
+        subTitulo.style.display = "flex";
+        listaSkills.style.display = "flex";
+
+        titulo.addEventListener("animationend", () => {
+            titulo.classList.remove("animacao-entrada");
+        }, {once: true});
+
+        minhaSkills.addEventListener("animationend", () => {
+            minhaSkills.classList.remove("animacao-entrada");
+        }, {once: true});
+
+        subTitulo.addEventListener("animationend", () => {
+            subTitulo.classList.remove("animacao-entrada");
+        }, {once: true});
+
+        listaSkills.addEventListener("animationend", () => {
+            listaSkills.classList.remove("animacao-entrada");
+        }, {once: true});
 
     });
 
