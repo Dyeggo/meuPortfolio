@@ -106,7 +106,7 @@ window.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         if (secaoAtual === "projetos") return;
-        secaoAtual = projetos
+        secaoAtual = "projetos";
 
         h1.style.display = "none";
         titulo.style.display = "none";
