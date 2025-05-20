@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const sobre = document.getElementById("butSobre");
     const skills = document.getElementById("butSkills");
+    const projetos = document.getElementById("butProjetos");
 
     const titulo = document.querySelector("h1");
     const texto = document.querySelectorAll("p");
@@ -15,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const minhaSkills = document.querySelectorAll(".minhaSkills");
     const subTitulo = document.querySelector("h2");
     const listaSkills = document.querySelector("ul");
+    const secaoProjetos = document.querySelector(".secaoProjetos");
 
     let secaoAtual = "";
     
@@ -31,8 +33,10 @@ window.addEventListener("DOMContentLoaded", () => {
         if (secaoAtual === "sobre") return;
         secaoAtual = "sobre";
 
+        secaoProjetos.style.display = "none";
         h1.style.display = "none";
         skills.style.background = "none";
+        projetos.style.background = "none";
         sobre.style.background = "#3e3e5e";
         telaPrincipal.style.flexDirection = "column";
         minhaImagem.style.display = "flex";
@@ -67,9 +71,11 @@ window.addEventListener("DOMContentLoaded", () => {
         if (secaoAtual === "skills") return;
         secaoAtual = "skills";
         
+        secaoProjetos.style.display = "none";
         h1.style.display = "none";
         titulo.textContent = "Hard Skills";
         sobre.style.background = "none";
+        projetos.style.background = "none";
         skills.style.background = "#3e3e5e";
         minhaImagem.style.display = "none";
         telaPrincipal.style.flexDirection = "column";
@@ -94,6 +100,33 @@ window.addEventListener("DOMContentLoaded", () => {
         listaSkills.classList.add("animacao-entrada");
         removerAnimacaoFinal(listaSkills);
         listaSkills.style.display = "flex";
+    });
+
+    projetos.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (secaoAtual === "projetos") return;
+        secaoAtual = projetos
+
+        h1.style.display = "none";
+        titulo.style.display = "none";
+        sobre.style.background = "none";
+        skills.style.background = "none";
+        projetos.style.background = "#3e3e5e";
+        minhaImagem.style.display = "none";
+        subTitulo.style.display = "none";
+        listaSkills.style.display = "none";
+        texto.forEach(p =>{
+            p.style.display = "none";
+        });
+        minhaSkills.forEach(img => {
+            img.style.display = "none";
+        });
+
+        secaoProjetos.classList.add("animacao-entrada");
+        removerAnimacaoFinal(secaoProjetos);
+        secaoProjetos.style.display = "flex";
+
     });
 
 });
