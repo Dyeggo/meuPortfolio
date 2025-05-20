@@ -80,7 +80,7 @@ nav a:hover {
     box-shadow: 0 0 5px 1px #ffffff79;
 }
 
-/* Apresentação */
+/* Apresentação -----------------------------------------------------------*/
 main {
     flex: 1;
     padding: 60px;
@@ -89,14 +89,73 @@ main {
     justify-content: center;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+p {
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+    max-width: 1024px;
+    line-height: 20px;
+}
+
 main .logoPrincipal{
     display: none;
 }
 
-.secaoProjetos {
+.secaoSkills, .secaoProjetos, .secaoSobre {
     display: none;
     flex-direction: column;
+    align-items: center;
 }
+
+/* seção sobre ------------------------------------------------*/
+
+.secaoSobre img {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+span {
+    font-weight: bold;
+}
+
+/* seçao Skills ----------------------------------------------*/
+
+.containerIcon {
+    display: flex;
+}
+
+.minhaSkills {
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 60px 20px 0 0;
+}
+
+h2 {
+    margin: 30px 0 30px 0;
+}
+
+ ul {
+    flex-direction: column;
+}
+
+li {
+    background-color: #1e1e2f;
+    margin-top: 1px;
+    padding: 2px;
+    color: #fff;
+    border-radius: 5px;
+    list-style: none;
+}
+
+/* seção projetos---------------------------------------- */
 
 .h1SecaoProjetos {
     text-align: center;
@@ -137,53 +196,7 @@ section .fotoProjeto {
     border-radius: 10px;
 }
 
-main p {
-    display: none;
-    border-bottom: solid 1px black;
-    margin-bottom: 5px;
-    max-width: 1024px;
-    line-height: 20px;
-}
-
-span {
-    font-weight: bold;
-}
-
-main h1 {
-    font-size: 40px;
-}
-
-main img {
-    display: none;
-    position: relative;
-    width: 250px;
-    height: 200px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.containerIcon {
-    display: flex;
-}
-
-.minhaSkills {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin: 60px 20px 0 0;
-}
-
-h2 {
-    display: none;
-    margin: 30px 0 30px 0;
-}
-
- ul {
-    display: none;
-    flex-direction: column;
-}
+/* animaçoes da apresentação -------------------------------- */
 
 @keyframes entrarDaEsquerda {
     0% {
@@ -199,6 +212,8 @@ h2 {
 .animacao-entrada {
     animation: entrarDaEsquerda 0.8s ease-in;
 }
+
+/* animação do titulo inicial */
 
 @keyframes aparecer {
     0%{
