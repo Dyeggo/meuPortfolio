@@ -89,6 +89,10 @@ main {
     justify-content: center;
 }
 
+main .logoPrincipal{
+    display: none;
+}
+
 main p {
     display: none;
     border-bottom: solid 1px black;
