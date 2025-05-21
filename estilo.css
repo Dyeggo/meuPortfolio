@@ -105,6 +105,10 @@ p {
 
 main .logoPrincipal{
     display: none;
+    background: linear-gradient(to bottom, #1e1e2f, #1e1e2fa4);
+    padding: 50px;
+    border-radius: 20px;
+    color: #fff;
 }
 
 .secaoSkills, .secaoProjetos, .secaoSobre {
