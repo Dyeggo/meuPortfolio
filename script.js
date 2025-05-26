@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
         skills.style.background = "none";
         projetos.style.background = "none";
         sobre.style.background = "#3e3e5e";
-        secaoSobre.style.display = "flex"
+        secaoSobre.style.display = "flex";
         secaoProjetos.style.display = "none";
         secaoSkills.style.display = "none";
     });
