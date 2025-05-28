@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const secaoSobre = document.querySelector(".secaoSobre");
     const secaoSkills = document.querySelector(".secaoSkills");
     const secaoProjetos = document.querySelector(".secaoProjetos");
+    const menuLateral = document.querySelector("aside");
 
     let secaoAtual = "";
     
@@ -65,6 +66,13 @@ window.addEventListener("DOMContentLoaded", () => {
         secaoSkills.style.display = "none";
         secaoSobre.style.display = "none";
         secaoProjetos.style.display = "flex";
+    });
+
+    const menuBotao = document.querySelector("menuBotao").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        menuBotao.style.display = "none";
+        menuLateral.style.display = "flex";
     });
 
 });
