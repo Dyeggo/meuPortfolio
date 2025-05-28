@@ -12,6 +12,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const secaoSobre = document.querySelector(".secaoSobre");
     const secaoSkills = document.querySelector(".secaoSkills");
     const secaoProjetos = document.querySelector(".secaoProjetos");
+
+    const menuBotao = document.querySelector(".menuBotao");
+    const botaoFechar = document.querySelector(".botaoFechar");
     const menuLateral = document.querySelector("aside");
 
     let secaoAtual = "";
@@ -19,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //funçao para remover a animação no  final
     function removerAnimacaoFinal (elemento) {
         elemento.addEventListener("animationend", () => {
-            elemento.classList.remove("animacao-entrada");
+            elemento.classList.remove("animacao-logo-principal");
         }, {once: true});
     }
 
@@ -36,6 +39,11 @@ window.addEventListener("DOMContentLoaded", () => {
         secaoSobre.style.display = "flex";
         secaoProjetos.style.display = "none";
         secaoSkills.style.display = "none";
+
+        if (window.innerWidth <= 768) {
+            menuLateral.style.display = "none";
+        }
+
     });
 
     skills.addEventListener("click", (e) => {
@@ -51,6 +59,10 @@ window.addEventListener("DOMContentLoaded", () => {
         secaoSobre.style.display = "none";
         secaoSkills.style.display = "flex";
         secaoProjetos.style.display = "none";
+
+        if (window.innerWidth <= 768) {
+            menuLateral.style.display = "none";
+        }
     });
 
     projetos.addEventListener("click", (e) => {
@@ -66,13 +78,32 @@ window.addEventListener("DOMContentLoaded", () => {
         secaoSkills.style.display = "none";
         secaoSobre.style.display = "none";
         secaoProjetos.style.display = "flex";
+
+        if (window.innerWidth <= 768) {
+            menuLateral.style.display = "none";
+        }
     });
 
-    const menuBotao = document.querySelector("menuBotao").addEventListener("click", (e) => {
+    menuBotao.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        menuLateral.style.display = "flex";
+        menuLateral.classList.remove("animar-sair");
+        menuLateral.classList.add("animar-entrar");
+    });
+
+    botaoFechar.addEventListener("click", (e) => {
         e.preventDefault();
 
-        menuBotao.style.display = "none";
-        menuLateral.style.display = "flex";
+        menuLateral.classList.remove("animar-entrar");
+        menuLateral.classList.add("animar-sair");
+        
+        // Só esconde depois que a animação termina
+        menuLateral.addEventListener("animationend", function esconder() {
+            menuLateral.style.display = "none";
+            menuLateral.classList.remove("animar-sair");
+            menuLateral.removeEventListener("animationend", esconder);
+        });
     });
 
 });

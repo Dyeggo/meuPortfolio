@@ -80,6 +80,15 @@ nav a:hover {
     box-shadow: 0 0 5px 1px #ffffff79;
 }
 
+.botaoFechar {
+    display: none;
+    width: 100%;
+    text-align: right;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
 /* Apresentação -----------------------------------------------------------*/
 main {
     flex: 1;
@@ -109,6 +118,7 @@ main .logoPrincipal{
     padding: 50px;
     border-radius: 20px;
     color: #fff;
+    margin-top: 300px;
 }
 
 .secaoSkills, .secaoProjetos, .secaoSobre {
@@ -118,6 +128,10 @@ main .logoPrincipal{
 }
 
 /* seção sobre ------------------------------------------------*/
+
+.menuBotao {
+    display: none;
+}
 
 .secaoSobre img {
     position: relative;
@@ -233,9 +247,47 @@ section .fotoProjeto {
   transform: translateY(0);
 }
 
+
+/*------------------------- animação botão abrindo e fechando---------*/
+
+@keyframes entrarDaEsquerda {
+  from {
+    opacity: 1;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animar-entrar {
+  animation: entrarDaEsquerda 0.6s linear forwards;
+}
+
+/* Sai indo para a esquerda */
+@keyframes sairParaEsquerda {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50px);
+  }
+}
+
+.animar-sair {
+  animation: sairParaEsquerda 0.6s linear forwards;
+}
+
 /*-----------------------*/
 
 @media (max-width: 768px) {
+
+    .botaoFechar {
+        display: block;
+    }
 
     .menuBotao {
         width: 100%;
@@ -251,10 +303,25 @@ section .fotoProjeto {
     }
 
     aside {
+        position: absolute;
         display: none;
+        z-index: 10;
+        width: 70%;
+        height: 100vh;
     }
 
     section {
         display: flex;
+    }
+
+    body {
+        position: relative;
+    }
+
+
+    main {
+        flex: none;
+        width: 100%;
+        min-height: 100vh;
     }
 }
